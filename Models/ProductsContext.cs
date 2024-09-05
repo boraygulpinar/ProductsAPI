@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography.X509Certificates;
 
 namespace ProductsAPI.Models
 {
-    public class ProductsContext : DbContext
+    public class ProductsContext : IdentityDbContext<AppUser, AppRole, int>
     {
         public ProductsContext(DbContextOptions options) : base(options)
         {
